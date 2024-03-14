@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class B {
+public class Mechanic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,7 +16,7 @@ public class B {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private C c;
+    private Company company;
 
     // other fields
 
@@ -37,11 +37,11 @@ public class B {
         this.name = name;
     }
 
-    public C getC() {
-        return c;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setC(C c) {
-        this.c = c;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }
